@@ -1,0 +1,11 @@
+﻿@model Hero;
+
+<h1>CREATE YOUR HERO</h1>
+<form method="post" asp-controller="Home" asp-action="Create">
+    <span asp-validation-for="Name"></span>
+    <label asp-for="Name"></label>
+    <input asp-for="Name">
+
+    <input value="Create Hero!" type="submit">
+</form>
+
