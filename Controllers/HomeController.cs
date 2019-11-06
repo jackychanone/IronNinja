@@ -12,9 +12,19 @@ namespace IronNinja.Controllers
     {
         [Route("")]
         [HttpGet]
-        public IActionResult Index()
-        {
+        public IActionResult Home() {
             return View();
+        }
+
+        [Route("create")]
+        [HttpPost]
+        public IActionResult Create(Hero hero) {
+            if (ModelState.IsValid) {
+                return RedirectToAction("Fight");
+            }
+            else {
+                return View("Home");
+            }
         }
 
     }
